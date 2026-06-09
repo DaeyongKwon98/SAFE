@@ -17,8 +17,8 @@ The reference environment is Python 3.10, CUDA 12.8, and four NVIDIA RTX A6000
 48 GB GPUs.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+conda create -n safe python=3.10 -y
+conda activate safe
 pip install -r requirements.txt
 ```
 

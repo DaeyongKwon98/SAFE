@@ -127,12 +127,6 @@ python scripts/check_docs.py
 
 The unit tests use mock components and do not download checkpoints.
 
-## Repository policy
-
-Datasets, model weights, checkpoints, and generated outputs are not tracked.
-Only synthetic fixtures are included. Follow the licenses and terms of the
-original datasets and model checkpoints.
-
 ## Citation
 
 If you find our work useful, please cite our work!

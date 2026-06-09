@@ -4,12 +4,6 @@ This repository contains the official implementation of SAFE, an LLM-as-verifier
 
 SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
 
-The repository provides three inference modes through one interface:
-
-- **Baseline** generates steps without evaluation.
-- **Self-feedback** uses the generator to evaluate and revise its own steps.
-- **SAFE** uses a trained LoRA evaluator for diagnosis and next-step guidance.
-
 ## Installation
 
 The reference environment is Python 3.10 and CUDA 12.8.

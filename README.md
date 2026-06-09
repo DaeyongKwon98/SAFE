@@ -50,17 +50,13 @@ downloaded data to the benchmark JSONL contract described above.
 ### Wrong-question splits
 
 The [`data/`](data/) directory provides the question-only subsets whose
-knowledge-graph evidence was marked insufficient. Each UTF-8 text file has no
-header and contains exactly one question per line.
+knowledge-graph evidence was marked insufficient. Each text file contains exactly one question per line.
 
-| Dataset | Train (`all_triples_supported: false`) | Validation (`*_dev_kg_wrong.csv`) |
+| Dataset | Train | Validation |
 | --- | ---: | ---: |
 | 2WikiMultiHopQA | [`2wiki_train_wrong.txt`](data/2wiki_train_wrong.txt) (7,452) | [`2wiki_val_wrong.txt`](data/2wiki_val_wrong.txt) (901) |
 | HotpotQA | [`hotpotqa_train_wrong.txt`](data/hotpotqa_train_wrong.txt) (2,376) | [`hotpotqa_val_wrong.txt`](data/hotpotqa_val_wrong.txt) (227) |
 | MuSiQue | [`musique_train_wrong.txt`](data/musique_train_wrong.txt) (2,149) | [`musique_val_wrong.txt`](data/musique_val_wrong.txt) (342) |
-
-The files intentionally contain questions only. Use the original benchmark IDs
-and records when provenance, context, or exact row-level identity is required.
 
 ## Reproduction
 

@@ -9,6 +9,9 @@ SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to ch
 The reference environment is Python 3.10 and CUDA 12.8.
 
 ```bash
+git clone https://github.com/DaeyongKwon98/SAFE.git
+cd SAFE
+
 conda create -n safe python=3.10 -y
 conda activate safe
 pip install -r requirements.txt

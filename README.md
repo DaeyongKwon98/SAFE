@@ -7,10 +7,6 @@ reasoning. It compares three modes through one interface:
 - **Self-feedback** uses the generator to evaluate and revise its own steps.
 - **SAFE** uses a trained LoRA evaluator for diagnosis and next-step guidance.
 
-The public repository contains the main comparison pipeline. Historical
-ablation, API, retrieval, and notebook code is preserved in the
-`pre-public-refactor` Git tag.
-
 ## Installation
 
 The reference environment is Python 3.10, CUDA 12.8, and four NVIDIA RTX A6000
@@ -137,8 +133,6 @@ The unit tests use mock components and do not download checkpoints.
 Datasets, model weights, checkpoints, and generated outputs are not tracked.
 Only synthetic fixtures are included. Follow the licenses and terms of the
 original datasets and model checkpoints.
-
-See [`MIGRATION.md`](MIGRATION.md) for the historical-script mapping.
 
 ## Citation
 

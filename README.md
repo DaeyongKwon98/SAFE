@@ -1,7 +1,10 @@
-# SAFE
+# SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning
 
-SAFE is a Transformers-based research toolkit for feedback-guided multi-hop
-reasoning. It compares three modes through one interface:
+This repository contains the official implementation of SAFE, an LLM-as-verifier framework that tackles "spurious correctness" in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
+
+SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
+
+The repository provides three inference modes through one interface:
 
 - **Baseline** generates steps without evaluation.
 - **Self-feedback** uses the generator to evaluate and revise its own steps.
@@ -9,8 +12,7 @@ reasoning. It compares three modes through one interface:
 
 ## Installation
 
-The reference environment is Python 3.10, CUDA 12.8, and four NVIDIA RTX A6000
-48 GB GPUs.
+The reference environment is Python 3.10 and CUDA 12.8.
 
 ```bash
 conda create -n safe python=3.10 -y
@@ -135,6 +137,8 @@ Only synthetic fixtures are included. Follow the licenses and terms of the
 original datasets and model checkpoints.
 
 ## Citation
+
+If you find our work useful, please cite our work!
 
 ```bibtex
 @article{kwon2026safe,

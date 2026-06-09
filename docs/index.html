@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SAFE: feedback-guided multi-hop reasoning with Hugging Face Transformers.">
+  <title>SAFE | Feedback-Guided Multi-Hop Reasoning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <a class="brand" href="#top">SAFE</a>
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#taxonomy">Taxonomy</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#reproduce">Reproduce</a>
+      </div>
+    </nav>
+    <div id="top" class="hero-grid">
+      <div>
+        <p class="eyebrow">Research code release</p>
+        <h1>Step-level feedback for reliable multi-hop reasoning</h1>
+        <p class="lead">
+          SAFE separates reasoning generation from verification. A trained
+          evaluator diagnoses each proposed step and gives one concrete action
+          for correction before the chain continues.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/DaeyongKwon98/SAFE">View code</a>
+          <a class="button secondary" href="#reproduce">Reproduce locally</a>
+        </div>
+        <p class="meta">Daeyong Kwon · Transformers reference implementation · 2026</p>
+      </div>
+      <div class="pipeline-card" aria-label="SAFE pipeline diagram">
+        <div class="node">Question + passages</div>
+        <span>↓</span>
+        <div class="node accent">Generator proposes one step</div>
+        <span>↓</span>
+        <div class="split">
+          <div class="node success">Accept</div>
+          <div class="node warning">Diagnose + revise</div>
+        </div>
+        <span>↓</span>
+        <div class="node">Verified final answer</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="abstract">
+      <p class="section-label">Abstract</p>
+      <h2>Reasoning is treated as a sequence of verifiable decisions.</h2>
+      <p class="section-copy">
+        SAFE generates one attribution, logical inference, or final-answer step
+        at a time. A LoRA evaluator checks grounding, relevance, novelty,
+        efficiency, logical validity, and answer timing. Rejected steps are
+        regenerated from a diagnosis and immediate guidance instead of allowing
+        an early error to propagate.
+      </p>
+    </section>
+
+    <section id="method" class="panel">
+      <p class="section-label">Method</p>
+      <h2>One implementation, three controlled modes</h2>
+      <div class="cards three">
+        <article>
+          <span class="index">01</span>
+          <h3>Baseline</h3>
+          <p>The generator advances without external verification and stops at a final answer.</p>
+        </article>
+        <article>
+          <span class="index">02</span>
+          <h3>Self-feedback</h3>
+          <p>The generator evaluates its own proposed step and retries rejected steps.</p>
+        </article>
+        <article>
+          <span class="index">03</span>
+          <h3>SAFE</h3>
+          <p>A separately trained PEFT evaluator supplies targeted revision guidance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="taxonomy">
+      <p class="section-label">Error taxonomy</p>
+      <h2>Feedback identifies the failure mode, not only correctness.</h2>
+      <div class="taxonomy">
+        <span>Contradictory</span><span>Unsupported</span><span>Logical Fallacy</span>
+        <span>Information Miss</span><span>Redundancy</span><span>Overthinking</span>
+        <span>Off-topic</span><span>Inefficiency</span><span>Premature Attribution</span>
+        <span>Premature Conclusion</span><span>Wrong Conclusion</span>
+      </div>
+    </section>
+
+    <section id="evaluation" class="panel">
+      <p class="section-label">Evaluation</p>
+      <h2>Main comparison outputs</h2>
+      <div class="metric-grid">
+        <div><strong>EM</strong><span>Normalized exact match over accepted answers</span></div>
+        <div><strong>Token F1</strong><span>Overlap against all answer aliases</span></div>
+        <div><strong>Steps</strong><span>Accepted reasoning steps per sample</span></div>
+        <div><strong>Retries</strong><span>Rejected generations before correction</span></div>
+      </div>
+      <p class="note">
+        Each run writes predictions, evaluator traces, resolved configuration,
+        and aggregate metrics so the comparison remains auditable.
+      </p>
+    </section>
+
+    <section id="example">
+      <p class="section-label">Qualitative trace</p>
+      <h2>A correction remains local to the failed step.</h2>
+      <div class="trace">
+        <div><b>Proposed</b><code>Step 1: Lyon is the capital of France. (Attribution)</code></div>
+        <div><b>Diagnosis</b><code>Contradictory: Passage 1 explicitly identifies Paris.</code></div>
+        <div><b>Guidance</b><code>Extract Paris as the capital from Passage 1.</code></div>
+        <div><b>Revised</b><code>Step 1: According to Passage 1, Paris is the capital of France. (Attribution)</code></div>
+      </div>
+    </section>
+
+    <section id="reproduce" class="panel">
+      <p class="section-label">Reproduction</p>
+      <h2>Transformers only. No hosted model API is required.</h2>
+      <pre><code>pip install -r requirements.txt
+python -m safe prepare --config configs/main.yaml \
+  --benchmark examples/benchmark.jsonl \
+  --output outputs/data/evaluator.jsonl
+python -m safe reproduce --config configs/main.yaml --dry-run</code></pre>
+      <p>
+        The reference setup uses Python 3.10, CUDA 12.8, 4-bit NF4 loading,
+        PEFT adapters, and automatic multi-GPU placement.
+      </p>
+    </section>
+
+    <section id="citation">
+      <p class="section-label">Citation</p>
+      <h2>Cite the software release</h2>
+      <pre><code>@software{kwon2026safe,
+  author = {Daeyong Kwon},
+  title = {SAFE: Feedback-Guided Multi-Hop Reasoning Toolkit},
+  year = {2026},
+  url = {https://github.com/DaeyongKwon98/SAFE}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <span>SAFE · MIT License</span>
+    <a href="https://github.com/DaeyongKwon98/SAFE">GitHub repository</a>
+  </footer>
+</body>
+</html>
+

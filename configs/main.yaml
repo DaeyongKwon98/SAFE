@@ -1,0 +1,56 @@
+seed: 42
+
+models:
+  generator: Qwen/Qwen3-8B
+  evaluator_base: Qwen/Qwen3-8B
+  evaluator_adapter: outputs/evaluator
+  load_in_4bit: true
+  dtype: bfloat16
+  trust_remote_code: true
+  enable_thinking: false
+  max_memory:
+    0: 22GiB
+    1: 22GiB
+    2: 22GiB
+    3: 22GiB
+
+generation:
+  batch_size: 4
+  max_input_tokens: 8192
+  generator:
+    max_new_tokens: 256
+    temperature: 0.0
+    top_p: 1.0
+  evaluator:
+    max_new_tokens: 384
+    temperature: 0.0
+    top_p: 1.0
+
+inference:
+  max_steps: 10
+  max_retries: 3
+
+training:
+  output_dir: outputs/evaluator
+  test_size: 0.1
+  max_length: 8500
+  num_train_epochs: 2.0
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 16
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  logging_steps: 10
+  eval_steps: 100
+  save_steps: 100
+  lora_r: 64
+  lora_alpha: 128
+  lora_dropout: 0.05
+
+paths:
+  benchmark: examples/benchmark.jsonl
+  evaluator_data: outputs/data/evaluator.jsonl
+  inference_input: examples/benchmark.jsonl
+  output_root: outputs/main
+

@@ -11,8 +11,6 @@ The public repository contains the main comparison pipeline. Historical
 ablation, API, retrieval, and notebook code is preserved in the
 `pre-public-refactor` Git tag.
 
-Project page: <https://daeyongkwon98.github.io/SAFE/>
-
 ## Installation
 
 The reference environment is Python 3.10, CUDA 12.8, and four NVIDIA RTX A6000
@@ -36,6 +34,18 @@ correct-step examples. Evaluator JSONL additionally requires `previous_steps`,
 `current_step`, `error_type`, `diagnosis`, and `guidance`.
 
 Small synthetic fixtures are provided in [`examples/`](examples/).
+
+## Benchmarks
+
+The experiments use three public multi-hop question answering benchmarks. Download
+them from their original project pages:
+
+- [2WikiMultiHopQA](https://github.com/Alab-NII/2wikimultihop)
+- [HotpotQA](https://huggingface.co/datasets/hotpotqa/hotpot_qa)
+- [MuSiQue](https://github.com/stonybrooknlp/musique)
+
+The repository does not redistribute the complete benchmark files. Convert the
+downloaded data to the benchmark JSONL contract described above.
 
 ## Reproduction
 

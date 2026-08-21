@@ -133,7 +133,7 @@ If you find our work useful, please cite our work!
 
 ```bibtex
 @article{kwon2026safe,
-  title={SAFE: Stepwise Atomic Feedback for Error correction in Multi-hop Reasoning},
+  title={SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning},
   author={Kwon, Daeyong and Yoon, Soyoung and Hwang, Seung-won},
   journal={arXiv preprint arXiv:2604.01993},
   year={2026}

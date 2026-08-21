@@ -1,6 +1,6 @@
 # SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning
 
-This repository contains the official implementation of SAFE, an LLM-as-verifier framework that tackles "spurious correctness" in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
+This repository contains the official implementation of **SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning (EMNLP 2026 main)** that tackles spurious correctness in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
 
 SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
 

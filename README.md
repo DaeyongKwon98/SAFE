@@ -139,6 +139,7 @@ If you find our work useful, please cite our work!
   year={2026}
 }
 ```
+If you have any questions, feedback, or issues, please feel free to contact us at `daeyongkwon@snu.ac.kr`.
 
 ## License
 

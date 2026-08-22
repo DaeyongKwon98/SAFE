@@ -1,8 +1,13 @@
 # SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning
 
+[![arXiv](https://img.shields.io/badge/arXiv-2604.01993-b31b1b.svg)](https://arxiv.org/abs/2604.01993)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-FFD21E)](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA)
+
 This repository contains the official implementation of **SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning (EMNLP 2026)** that tackles spurious correctness in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
 
 SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
+
+We also release SAFE-Verified versions of three widely used multi-hop QA benchmarks—2WikiMultiHopQA, HotpotQA, and MuSiQue—providing cleaned training and validation splits for more reliable evaluation.
 
 ## Installation
 

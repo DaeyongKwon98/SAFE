@@ -7,7 +7,7 @@ This repository contains the official implementation of **SAFE: An LLM-as-Verifi
 
 SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
 
-We also release SAFE-Verified versions of three widely used multi-hop QA benchmarks—2WikiMultiHopQA, HotpotQA, and MuSiQue—providing cleaned training and validation splits for more reliable evaluation.
+We also release SAFE-Verified versions of three widely used multi-hop QA benchmarks—**2WikiMultiHopQA, HotpotQA, and MuSiQue**. Through KG-based verification, we identify examples with ambiguous questions, incorrect answers, or insufficient supporting context, and release the resulting cleaned training and validation splits.
 
 ## Installation
 

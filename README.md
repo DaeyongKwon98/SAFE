@@ -1,8 +1,13 @@
 # SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning
 
-This repository contains the official implementation of SAFE, an LLM-as-verifier framework that tackles "spurious correctness" in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
+[![arXiv](https://img.shields.io/badge/arXiv-2604.01993-b31b1b.svg)](https://arxiv.org/abs/2604.01993)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-FFD21E)](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA)
+
+This repository contains the official implementation of **SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning (EMNLP 2026)** that tackles spurious correctness in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
 
 SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
+
+We also release SAFE-Verified versions of three widely used multi-hop QA benchmarks—**2WikiMultiHopQA, HotpotQA, and MuSiQue**. Through KG-based verification, we identify examples with ambiguous questions, incorrect answers, or insufficient supporting context, and release the resulting cleaned training and validation splits.
 
 ## Installation
 
@@ -123,12 +128,13 @@ If you find our work useful, please cite our work!
 
 ```bibtex
 @article{kwon2026safe,
-  title={SAFE: Stepwise Atomic Feedback for Error correction in Multi-hop Reasoning},
+  title={SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning},
   author={Kwon, Daeyong and Yoon, Soyoung and Hwang, Seung-won},
   journal={arXiv preprint arXiv:2604.01993},
   year={2026}
 }
 ```
+If you have any questions, feedback, or issues, please feel free to contact us at `daeyongkwon@snu.ac.kr`.
 
 ## License
 

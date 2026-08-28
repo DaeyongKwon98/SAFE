@@ -32,26 +32,16 @@ Small synthetic fixtures are provided in [`examples/`](examples/).
 
 ## Benchmarks
 
-The experiments use three public multi-hop question answering benchmarks. Download
-them from their original project pages:
+The experiments use three public multi-hop question answering benchmarks. A
+**SAFE-Verified** version of the benchmark data can be downloaded directly from
+[Hugging Face](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA),
+so there is no need to download and convert the original datasets yourself.
+
+The original dataset pages are retained below for reference:
 
 - [2WikiMultiHopQA](https://github.com/Alab-NII/2wikimultihop)
 - [HotpotQA](https://huggingface.co/datasets/hotpotqa/hotpot_qa)
 - [MuSiQue](https://github.com/stonybrooknlp/musique)
-
-The repository does not redistribute the complete benchmark files. Convert the
-downloaded data to the benchmark JSONL contract described above.
-
-### Wrong-question splits
-
-The [`data/`](data/) directory provides the question-only subsets whose
-knowledge-graph evidence was marked insufficient. Each text file contains exactly one question per line.
-
-| Dataset | Train | Validation |
-| --- | ---: | ---: |
-| 2WikiMultiHopQA | [`2wiki_train_wrong.txt`](data/2wiki_train_wrong.txt) (7,452) | [`2wiki_val_wrong.txt`](data/2wiki_val_wrong.txt) (901) |
-| HotpotQA | [`hotpotqa_train_wrong.txt`](data/hotpotqa_train_wrong.txt) (2,376) | [`hotpotqa_val_wrong.txt`](data/hotpotqa_val_wrong.txt) (227) |
-| MuSiQue | [`musique_train_wrong.txt`](data/musique_train_wrong.txt) (2,149) | [`musique_val_wrong.txt`](data/musique_val_wrong.txt) (342) |
 
 ## Reproduction
 

@@ -37,8 +37,7 @@ Small synthetic fixtures are provided in [`examples/`](examples/).
 
 ## Benchmarks
 
-The experiments use three public multi-hop question answering benchmarks. A
-**SAFE-Verified** version of the benchmark data can be downloaded directly from
+We release **SAFE-Verified-MultiHopQA**, clean version of three multi-hop question answering benchmarks (2WikiMultiHopQA, HotpotQA, MuSiQue). It can be downloaded directly from
 [Hugging Face](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA),
 so there is no need to download and convert the original datasets yourself.
 

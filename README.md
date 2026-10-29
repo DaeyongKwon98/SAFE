@@ -3,11 +3,15 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2604.01993-b31b1b.svg)](https://arxiv.org/abs/2604.01993)
 [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-FFD21E)](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA)
 
+> 🎉 **[Oct 2026] [SAFE-Verified-MultiHopQA](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA) is now available on Hugging Face!**
+>
+> We release evidence-verified and cleaned versions of three widely used multi-hop QA benchmarks: **2WikiMultiHopQA, HotpotQA, and MuSiQue**. The filtered training and validation splits are freely available for research.
+
 This repository contains the official implementation of **SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning (EMNLP 2026)** that tackles spurious correctness in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
 
 SAFE decomposes reasoning into atomic, Knowledge Graph (KG)-grounded units to check intermediate steps during generation. By identifying invalid reasoning and providing immediate correction feedback before errors propagate, SAFE improves accuracy by 8.8 pp on average across three multi-hop QA benchmarks.
 
-We also release **SAFE-Verified-MultiHopQA**, clean version of three widely used multi-hop QA benchmarks—**2WikiMultiHopQA, HotpotQA, and MuSiQue**. Through KG-based verification, we identify examples with ambiguous questions, incorrect answers, or insufficient supporting context, and release the resulting cleaned training and validation splits. ([data download](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA))
+We also release **SAFE-Verified-MultiHopQA**, clean version of three widely used multi-hop QA benchmarks—**2WikiMultiHopQA, HotpotQA, and MuSiQue**. Through KG-based verification, we identify examples with ambiguous questions, incorrect answers, or insufficient supporting context, and release the resulting cleaned training and validation splits.
 
 ## Installation
 

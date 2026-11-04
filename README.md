@@ -5,7 +5,7 @@
 
 > 🎉 **[Oct 2026] [SAFE-Verified-MultiHopQA](https://huggingface.co/datasets/Daeyongkwon98/SAFE-Verified-MultiHopQA) is now available on Hugging Face!**
 >
-> We release evidence-verified and cleaned versions of three widely used multi-hop QA benchmarks: **2WikiMultiHopQA, HotpotQA, and MuSiQue**. The filtered training and validation splits are freely available for research.
+> We release **SAFE-Verified-MultiHopQA**, a dataset with **286K multi-hop QA** from evidence-verified and cleaned versions of three widely used multi-hop QA benchmarks: 2WikiMultiHopQA, HotpotQA, and MuSiQue. The filtered training and validation splits are freely available for research.
 
 This repository contains the official implementation of **SAFE: An LLM-as-Verifier Framework for Evidence-Grounded Multi-Hop Reasoning (EMNLP 2026)** that tackles spurious correctness in multi-hop QA by shifting evaluation from post-hoc answer judgment to stepwise reasoning verification.
 
